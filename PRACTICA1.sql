@@ -49,3 +49,20 @@ BEGIN
                       CONSTRAINT FK1_ID_PELICULA FOREIGN KEY (ID_PELICULA) REFERENCES PELICULA(ID_PELICULA)
                       );
                       DESCRIBE HORARIO;
+                      
+CREATE SEQUENCE sec_pelicula
+  start with 1
+  increment by 1
+  nomaxvalue;
+  
+  --El siguiente paso es ENLAZAR la recien creada secuencia con la tabla pelicula. nota:solamente se puede asociar una secuencia a una sola tabla.
+
+--para asociarlo se necesita un nuevo objeto de la base de datos, este obejto va a ser el que insertara el o los nuevos registros en la tabla pelicula: En resumen:
+--JAMAS se usa un insert.into... en oracle cuando tienen un primary key auto-generado
+--¿que repercuciones tiene esta secunecia sql en ambientes distribuidos?
+
+--SQL INJECTION
+--Este es el hacking mas dificil de erradicar.
+
+--TAREA
+--INVESTIGAR EM GOOGLE LO QUE ES INYECCION DE SQL Y CASO REALE SY NOTABLES.
